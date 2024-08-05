@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="welcome-message">
+            Welcome to the Game!
+        </div>
+        <div id="usernameDisplay" class="username-display"></div>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <p>This is the game homepage.</p>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let username = localStorage.getItem('username');
+            if (username) {
+                document.getElementById('usernameDisplay').textContent = username;
+            } else {
+                document.getElementById('usernameDisplay').textContent = 'Guest';
+            }
+        });
+    </script>
+</body>
+</html>
